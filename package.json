@@ -1,0 +1,47 @@
+{
+  "name": "streamer",
+  "version": "0.0.1",
+  "description": "streamer mode",
+  "main": "index.html",
+  "license": "MIT",
+  "build": {
+    "appId": "io.github.mess110.streamer.project",
+    "nwVersion": "0.33.2",
+    "packed": true,
+    "targets": [
+      "zip",
+      "nsis7z"
+    ],
+    "strippedProperties": [
+      "build"
+    ],
+    "outputPattern": "${NAME} ${VERSION} ${PLATFORM} ${ARCH}",
+    "win": {
+      "productName": "streamer",
+      "companyName": "nwjs-builder-phoenix",
+      "copyright": "MIT"
+    },
+    "mac": {
+      "displayName": "Project",
+      "copyright": "copyright",
+      "plistStrings": {
+        "CFBundleIdentifier": "io.github.evshiron.nwjs-builder-phoenix.project.modified",
+        "CFBundleDocumentTypes": []
+      }
+    }
+  },
+  "window": {
+    "title": "streamer btw",
+    "fullscreen": false,
+    "show": true,
+    "width": 640,
+    "height": 480
+  },
+  "scripts": {
+    "dist": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
+    "start": "run --x64 --mirror https://dl.nwjs.io/ ."
+  },
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.14.8"
+  }
+}
